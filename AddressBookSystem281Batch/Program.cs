@@ -19,6 +19,9 @@ namespace AddressBookSystem281Batch
             addressBookSystem.AddContact();
             addressBookSystem.EditContact();
             addressBookSystem.DisplayContact();
+
+            addressBookSystem.DeleteContact();
+            addressBookSystem.DisplayContact();
         }
             
     }

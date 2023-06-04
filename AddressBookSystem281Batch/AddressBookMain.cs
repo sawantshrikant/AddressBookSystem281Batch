@@ -97,6 +97,23 @@ namespace AddressBookSystem281Batch
             }
 
         }
+
+        public void DeleteContact()
+        {
+            Console.WriteLine("Enter the First Name of the person to delete:");
+            string name = Console.ReadLine();
+            Contacts contactToDelete = addressBookSystem.Find(c => c.FirstName.Equals(name));
+
+            if (contactToDelete != null)
+            {
+                addressBookSystem.Remove(contactToDelete);
+                Console.WriteLine("Contact deleted successfully!");
+            }
+            else
+            {
+                Console.WriteLine("Contact not found!");
+            }
+        }
     }
 }
 
