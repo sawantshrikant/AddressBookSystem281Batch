@@ -1,9 +1,7 @@
 ﻿using AddressBook;
+
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AddressBookSystem281Batch
 {
@@ -33,6 +31,7 @@ namespace AddressBookSystem281Batch
             contact.Email = Console.ReadLine();
             addressBookSystem.Add(contact);
         }
+
         public void DisplayContact()
         {
             foreach (var contact in addressBookSystem)
@@ -46,12 +45,9 @@ namespace AddressBookSystem281Batch
                 Console.WriteLine("Postal Code: " + contact.PostalCode);
                 Console.WriteLine("Phone Number: " + contact.PhoneNumber);
                 Console.WriteLine("Email: " + contact.Email);
-
             }
-
-
-
         }
+
         public void EditContact()
         {
             Console.WriteLine("Edit using FirstName");
@@ -88,14 +84,9 @@ namespace AddressBookSystem281Batch
                         case 8:
                             contact.Email = Console.ReadLine();
                             break;
-
-
-
                     }
                 }
-
             }
-
         }
 
         public void DeleteContact()
@@ -114,6 +105,56 @@ namespace AddressBookSystem281Batch
                 Console.WriteLine("Contact not found!");
             }
         }
+
+        public void AddMultipleContacts()
+        {
+            Console.WriteLine("Adding Multiple Persons to Address Book:");
+
+            while (true)
+            {
+                Console.WriteLine("Enter First Name (or 'exit' to stop):");
+                string firstName = Console.ReadLine();
+
+                if (firstName.ToLower() == "exit")
+                    break;
+
+                Console.WriteLine("Enter Last Name:");
+                string lastName = Console.ReadLine();
+
+                Console.WriteLine("Enter Address:");
+                string address = Console.ReadLine();
+
+                Console.WriteLine("Enter City:");
+                string city = Console.ReadLine();
+
+                Console.WriteLine("Enter State:");
+                string state = Console.ReadLine();
+
+                Console.WriteLine("Enter Postal Code:");
+                string postalCode = Console.ReadLine();
+
+                Console.WriteLine("Enter Phone Number:");
+                string phoneNumber = Console.ReadLine();
+
+                Console.WriteLine("Enter Email:");
+                string email = Console.ReadLine();
+
+                Contacts contact = new Contacts
+                {
+                    FirstName = firstName,
+                    LastName = lastName,
+                    Address = address,
+                    City = city,
+                    State = state,
+                    PostalCode = postalCode,
+                    PhoneNumber = phoneNumber,
+                    Email = email
+                };
+
+                addressBookSystem.Add(contact);
+
+                Console.WriteLine("Person added to the Address Book successfully!\n");
+            }
+        }
     }
 }
-

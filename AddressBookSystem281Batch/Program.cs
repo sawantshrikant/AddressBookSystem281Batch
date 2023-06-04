@@ -16,11 +16,15 @@ namespace AddressBookSystem281Batch
         {
             Console.WriteLine("Welcome to Address Book Program!");
             AddressBookMain addressBookSystem = new AddressBookMain();
+
             addressBookSystem.AddContact();
             addressBookSystem.EditContact();
             addressBookSystem.DisplayContact();
 
             addressBookSystem.DeleteContact();
+            addressBookSystem.DisplayContact();
+
+            addressBookSystem.AddMultipleContacts();
             addressBookSystem.DisplayContact();
         }
             
